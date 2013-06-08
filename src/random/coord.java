@@ -14,15 +14,19 @@ public class coord {
 		double xAnterior = seed;
 		
 		msg("Programa de criação de coordenadas utilizando\nalgoritimos pseudo-randomicos");
-		double n = entrDouble("Entre com o número de estrelas a serem geradas");
-		matriz(matriz,(int)n);
+		int n = (int)entrDouble("Entre com o número de estrelas a serem geradas");
+		
+		
+		
+		matriz = new double[n][4];
+		
+		
 		
 		for(int linha=0;linha<matriz.length;linha++){
 			for(int coluna=0;coluna<4;coluna++){
-				
 				if(coluna==0){// ID da estrela
 					matriz[linha][coluna]=id;
-					id++;
+					id++;					
 				}else if(coluna==1){// Coordenada X
 					matriz[linha][coluna]=seeder(xAnterior);
 					xAnterior = matriz[linha][coluna];
@@ -35,14 +39,14 @@ public class coord {
 				}
 				
 			}
-		}
+		}// loops!
+		
+		msg("Chegamos no final sem erros!!");
 		
 	}//main
 	
 	//==============================================================
-	public static void matriz(double v[][],int n){
-		v = new double[n][4];
-	}//matriz
+	
 	
 	public static double seeder(double Xi){
 		double Xf;
