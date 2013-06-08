@@ -16,7 +16,7 @@ public class coord {
 		
 		for(int c=0;c<matriz[0].length;c++){
 			for(int l=0;l<matriz.length;l++){
-				//matriz[l][c] = 
+				//matriz[l][c] = comit
 			}
 		}
 		
