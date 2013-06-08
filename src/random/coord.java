@@ -10,13 +10,30 @@ public class coord {
 	public static double[][] matriz;
 	
 	public static void main(String[] args){
+		int id = 1;//ID das estrelas
+		double xAnterior = seed;
+		
 		msg("Programa de criação de coordenadas utilizando\nalgoritimos pseudo-randomicos");
 		double n = entrDouble("Entre com o número de estrelas a serem geradas");
 		matriz(matriz,(int)n);
 		
-		for(int c=0;c<matriz[0].length;c++){
-			for(int l=0;l<matriz.length;l++){
-				//matriz[l][c] = comit
+		for(int linha=0;linha<matriz.length;linha++){
+			for(int coluna=0;coluna<4;coluna++){
+				
+				if(coluna==0){// ID da estrela
+					matriz[linha][coluna]=id;
+					id++;
+				}else if(coluna==1){// Coordenada X
+					matriz[linha][coluna]=seeder(xAnterior);
+					xAnterior = matriz[linha][coluna];
+				}else if(coluna==2){// Coordenada Y
+					matriz[linha][coluna]=seeder(xAnterior);
+					xAnterior = matriz[linha][coluna];
+				}else if(coluna==3){// Coordenada Z
+					matriz[linha][coluna]=seeder(xAnterior);
+					xAnterior = matriz[linha][coluna];
+				}
+				
 			}
 		}
 		
